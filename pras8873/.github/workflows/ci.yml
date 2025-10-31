@@ -1,1 +1,18 @@
+name: CI Workflow
 
+# Run this workflow on every push and pull request
+on: [push, pull_request]
+
+jobs:
+  build:
+    # Use the latest version of Ubuntu to run the job
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out your repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Run a simple echo command to show success
+      - name: Run a simple test
+        run: echo "✅ Workflow is running successfully!"
